@@ -1,0 +1,179 @@
+git init
+ls
+ls -a
+git config --global user.name "Prasad Polarapu"
+git config --global user.email "devopstraining2015@gmail.com"
+
+git config --list
+
+git config --global --unset user.name 
+git config --global --unset user.email
+
+=====================================
+
+git clone https://github.com/polarapu/batch71.git
+ls
+cd batch71
+touch file1
+ls
+git status
+git add file1
+git status
+git commit -m "label" file1
+git status
+git log
+git show cid
+git push
+
+---------------
+touch file3 file4 file5
+ls
+git add .
+or
+git add *
+or
+git add -A
+git status
+git commit -m "all files" 
+
+git status
+git log
+
+--------------------------------
+git reset head file-name (staging/index to workspace)
+git reset --soft cid  (local to staging)
+git reset --mixed cid  (local to workspace)
+
+git reset --hard cid  (to delete commit and commit files)
+
+git commit -m "label" file-name  (workspace to loca  only modified files)
+
+rm -rf file-name (to delete file)
+ 
+
+-----------------------------------------
+git clone https://github.com/polarapu/batch71.git
+ls
+cd batch71
+touch prasad
+git status
+git add prasad
+git status
+git commit -m "test commit from prasad"
+git status
+git log
+git show cid
+git push
+
+
+Logs
+====
+git log
+git log -n
+git log --oneline
+git log --oneline -n
+git log --author=Prasad
+git log --author=Prasad -n
+git log --author=Prasad --oneline
+git log --author=Prasad --oneline -n
+
+git log --sice=yy-mm-dd
+or
+git log --after=yy-mm-dd
+
+git log --until=yy-mm-dd
+or
+git log --before=yy-mm-dd
+
+git log --since=yy-mm-dd --until=yy-mm-dd
+or
+git log --after=yy-mm-dd --before=yy-mm-dd
+
+
+git log --after="2021-09-14 06:00" --before="2021-09-14 18:30"
+
+git log --grep="label"
+git log -- file/dir
+
+
+Branch
+------
+git branch
+git branch release1
+git checkout release1
+create data
+add, commit
+
+git merge branch-name
+git branch -d branch-name
+
+git push path/of/c-repo branch-name
+or
+git push origin branch-name
+
+Alias
+=====
+git status
+git config --global alias.s "status"
+git s
+
+git log --oneline
+git config --global alias.l1 "log --oneline"
+git l1
+
+git config --list
+git config --global alias.cl "config --list"
+git cl
+
+git branch
+git config --global alias.b "branch"
+git b
+
+git config --global --unset alias.cl  (to unset alias)
+
+vi .gitignore
+=============
+file1
+file2
+
+
+git merge / rebase
+
+
+
+cherry-pick
+----------
+git cherry-pick cid
+
+
+git amend
+-----------
+git commit --amend -m "label"
+
+revert
+-------
+git revert cid
+
+stash
+-----
+git stash list
+git stash save "label"
+git stash show stash@{x}
+git stash show -p stash@{x}
+
+POP, APPLY, DROP
+
+POP - cut
+----------
+git stash pop
+git stash pop stash@{x}
+
+Apply - copy
+------------
+git stash apply
+git stash apply stash@{x}
+
+Drop - delete
+-------------
+git stash drop
+git stash drop stash@{x}
